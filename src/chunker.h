@@ -37,6 +37,7 @@ struct chunker {
     } else {
       if      (c == '{') inside = ++depth >= min_depth;
       else if (c == '}') --depth;
+      else if (c == '"') quoted = true;
       else if (c == '\n') c = ' ';
     }
 
